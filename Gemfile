@@ -22,3 +22,7 @@ end
 gem 'mongoid', '~>3.1.0'
 
 gem 'jquery-rails'
+
+group :development, :test do
+  gem 'database_cleaner'
+end  

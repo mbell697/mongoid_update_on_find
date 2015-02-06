@@ -4,13 +4,13 @@ class ParentDoc
 
   field :name, type: String
 
-  embeds_one :embedded_doc, class_name: 'EmbeddedModule::EmbeddedDocBase'  
+  embeds_one :embedded_doc
 
   after_initialize :set_default_embedded_doc
 
   private
 
   def set_default_embedded_doc
-    self.embedded_doc = EmbeddedModule::EmbeddedDoc.default unless embedded_doc.nil?
+    self.embedded_doc = EmbeddedDoc.default unless embedded_doc?
   end
 end
